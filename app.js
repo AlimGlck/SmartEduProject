@@ -19,7 +19,15 @@ app.use(
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.send('Salam');
+  res.status(200).render('index',{
+    page_name:"index",
+  });
+});
+
+app.get('/about', (req, res) => {
+  res.status(200).render('about',{
+    page_name:"about",
+  });
 });
 
 const port = 3000;
